@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Data Driven Framework" duration-ms="6792" started-at="2019-05-21T19:29:27Z" finished-at="2019-05-21T19:29:34Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="6792" started-at="2019-05-21T19:29:27Z" finished-at="2019-05-21T19:29:34Z">
+      <class name="com.deepak.testcases.Login">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.deepak.testcases.Login@464bee09]" name="setUp" is-config="true" duration-ms="29958" started-at="2019-05-21T19:28:57Z" finished-at="2019-05-21T19:29:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="loginToBankManager()[pri:0, instance:com.deepak.testcases.Login@464bee09]" name="loginToBankManager" duration-ms="6769" started-at="2019-05-21T19:29:27Z" finished-at="2019-05-21T19:29:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToBankManager -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.deepak.testcases.Login@464bee09]" name="tearDown" is-config="true" duration-ms="3437" started-at="2019-05-21T19:29:34Z" finished-at="2019-05-21T19:29:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.deepak.testcases.Login -->
+    </test> <!-- Test -->
+  </suite> <!-- Data Driven Framework -->
+</testng-results>
