@@ -3,7 +3,12 @@
 <suite name="Data Driven Framework">
   <test thread-count="5" name="Login Test">
     <classes>
-      <class name="com.deepak.testcases.Login"/>
+      <class name="com.deepak.testcases.BankManagerLoginTest"/>
     </classes>
-  </test> <!-- Test -->
+  </test>
+	<test name="Add customer test">
+		<classes>
+			<class name="com.deepak.testcases.AddCustomerTest"/>
+		</classes>
+	</test>  
 </suite> <!-- Suite -->

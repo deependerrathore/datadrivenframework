@@ -1,63 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="10224" started-at="2019-05-23T14:47:02Z" finished-at="2019-05-23T14:47:12Z">
+  <suite name="Data Driven Framework" duration-ms="16187" started-at="2019-05-23T19:52:29Z" finished-at="2019-05-23T19:52:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="10224" started-at="2019-05-23T14:47:02Z" finished-at="2019-05-23T14:47:12Z">
-      <class name="com.deepak.testcases.Login">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.deepak.testcases.Login@7b49cea0]" name="setUp" is-config="true" duration-ms="10102" started-at="2019-05-23T14:46:51Z" finished-at="2019-05-23T14:47:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="loginToBankManager()[pri:0, instance:com.deepak.testcases.Login@7b49cea0]" name="loginToBankManager" duration-ms="10186" started-at="2019-05-23T14:47:02Z" finished-at="2019-05-23T14:47:12Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Failed to login expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Failed to login expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertTrue(Assert.java:44)
-at com.deepak.testcases.Login.loginToBankManager(Login.java:15)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+    <test name="Login Test" duration-ms="5356" started-at="2019-05-23T19:52:29Z" finished-at="2019-05-23T19:52:34Z">
+      <class name="com.deepak.testcases.BankManagerLoginTest">
+        <test-method status="PASS" signature="loginToBankManager()[pri:0, instance:com.deepak.testcases.BankManagerLoginTest@58ea606c]" name="loginToBankManager" duration-ms="5330" started-at="2019-05-23T19:52:29Z" finished-at="2019-05-23T19:52:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToBankManager -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.deepak.testcases.Login@7b49cea0]" name="tearDown" is-config="true" duration-ms="649" started-at="2019-05-23T14:47:12Z" finished-at="2019-05-23T14:47:12Z">
+      </class> <!-- com.deepak.testcases.BankManagerLoginTest -->
+    </test> <!-- Login Test -->
+    <test name="Add customer test" duration-ms="10784" started-at="2019-05-23T19:52:34Z" finished-at="2019-05-23T19:52:45Z">
+      <class name="com.deepak.testcases.AddCustomerTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.deepak.testcases.AddCustomerTest@6236eb5f]" name="setUp" is-config="true" duration-ms="10246" started-at="2019-05-23T19:52:19Z" finished-at="2019-05-23T19:52:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="addCustomer(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.deepak.testcases.AddCustomerTest@6236eb5f]" name="addCustomer" duration-ms="5485" started-at="2019-05-23T19:52:34Z" data-provider="getData" finished-at="2019-05-23T19:52:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Deepender]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Singh]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[411057.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Customer added successfully]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addCustomer -->
+        <test-method status="PASS" signature="addCustomer(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.deepak.testcases.AddCustomerTest@6236eb5f]" name="addCustomer" duration-ms="5271" started-at="2019-05-23T19:52:40Z" data-provider="getData" finished-at="2019-05-23T19:52:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Rahul]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Jadhwani]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[411057.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Customer added successfully]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addCustomer -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.deepak.testcases.AddCustomerTest@6236eb5f]" name="tearDown" is-config="true" duration-ms="649" started-at="2019-05-23T19:52:45Z" finished-at="2019-05-23T19:52:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.deepak.testcases.Login -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.deepak.testcases.AddCustomerTest -->
+    </test> <!-- Add customer test -->
+  </suite> <!-- Data Driven Framework -->
 </testng-results>

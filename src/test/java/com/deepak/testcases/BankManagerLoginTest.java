@@ -7,7 +7,8 @@ import org.testng.annotations.Test;
 
 import com.deepak.base.TestBase;
 
-public class Login extends TestBase {
+public class BankManagerLoginTest extends TestBase {
+	
 	@Test
 	public void loginToBankManager() {
 		log.debug("Inside Login Test");

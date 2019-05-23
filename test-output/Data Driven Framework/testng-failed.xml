@@ -3,13 +3,24 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Data Driven Framework]">
   <test thread-count="5" name="Login Test(failed)">
     <classes>
-      <class name="com.deepak.testcases.Login">
+      <class name="com.deepak.testcases.BankManagerLoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="loginToBankManager"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.deepak.testcases.BankManagerLoginTest -->
+    </classes>
+  </test> <!-- Login Test(failed) -->
+  <test thread-count="5" name="Add customer test(failed)">
+    <classes>
+      <class name="com.deepak.testcases.AddCustomerTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="loginToBankManager"/>
+          <include name="addCustomer" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- com.deepak.testcases.Login -->
+      </class> <!-- com.deepak.testcases.AddCustomerTest -->
     </classes>
-  </test> <!-- Login Test(failed) -->
+  </test> <!-- Add customer test(failed) -->
 </suite> <!-- Failed suite [Data Driven Framework] -->
