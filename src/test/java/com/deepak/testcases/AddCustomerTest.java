@@ -4,6 +4,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -20,12 +21,10 @@ public class AddCustomerTest extends TestBase{
 		driver.findElement(By.cssSelector(OR.getProperty("addBtn"))).click();
 		
 		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-				
-		Assert.assertTrue(alert.getText().contains(alertText));
 		
+		Assert.assertTrue(alert.getText().contains(alertText));
 		alert.accept();
 
-		System.out.println(firstname + "" + lastname + "" + postcode);
 	}
 	
 	@DataProvider

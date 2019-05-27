@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Data Driven Framework]">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="com.deepak.listeners.CustomListeners"/>
+  </listeners>
+  <test thread-count="5" name="Add customer test(failed)">
     <classes>
       <class name="com.deepak.testcases.AddCustomerTest">
         <methods>
@@ -11,5 +16,5 @@
         </methods>
       </class> <!-- com.deepak.testcases.AddCustomerTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Add customer test(failed) -->
+</suite> <!-- Failed suite [Data Driven Framework] -->
