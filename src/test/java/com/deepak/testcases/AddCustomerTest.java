@@ -24,6 +24,7 @@ public class AddCustomerTest extends TestBase{
 		
 		Assert.assertTrue(alert.getText().contains(alertText));
 		alert.accept();
+		Assert.fail();
 
 	}
 	
