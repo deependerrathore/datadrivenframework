@@ -17,11 +17,11 @@ public class AddCustomerTest extends TestBase{
 		type("lastname_XPATH",lastname);
 		type("postcode_CSS", postcode);
 		click("addBtn_CSS");
-		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 		
+		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 		Assert.assertTrue(alert.getText().contains(alertText));
 		alert.accept();
-		Assert.fail();
+		Thread.sleep(2000);
 
 	}
 }

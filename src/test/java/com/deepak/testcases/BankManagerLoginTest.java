@@ -27,6 +27,5 @@ public class BankManagerLoginTest extends TestBase {
 			e.printStackTrace();
 		}
 		log.debug("Login successfully loaded");
-		Assert.fail("Failing Login");
 	}
 }
