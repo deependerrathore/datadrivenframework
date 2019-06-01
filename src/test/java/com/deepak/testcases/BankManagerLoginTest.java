@@ -14,7 +14,7 @@ public class BankManagerLoginTest extends TestBase {
 	@Test
 	public void loginToBankManager() {
 		log.debug("Inside Login Test");
-		driver.findElement(By.cssSelector(OR.getProperty("bmlBtn"))).click();
+		click("bmlBtn_CSS");
 		assertTrue(isElementPresent(By.cssSelector(OR.getProperty("addCustBtn"))), "Failed to login");
 		try {
 			Thread.sleep(1000);

@@ -22,6 +22,7 @@ import com.deepak.utilities.ExcelReader;
 import com.deepak.utilities.ExtentManager;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class TestBase {
 	/*
@@ -116,6 +117,40 @@ public class TestBase {
 		
 		
 		
+	}
+	
+	public void click(String locator) {
+		if (locator.endsWith("_CSS")) {			
+			driver.findElement(By.cssSelector(OR.getProperty(locator))).click();
+		}else if (locator.endsWith("_XPATH")) {
+			driver.findElement(By.xpath(OR.getProperty(locator))).click();
+		}else if (locator.endsWith("_ID")) {
+			driver.findElement(By.id(OR.getProperty(locator))).click();
+		}else if(locator.endsWith("_name")) {
+			driver.findElement(By.name(OR.getProperty(locator))).click();
+		}else if(locator.endsWith("_CLASS")) {
+			driver.findElement(By.className(OR.getProperty(locator))).click();
+		}else if(locator.endsWith("_LINKTEXT")) {
+			driver.findElement(By.linkText(OR.getProperty(locator))).click();
+		}else if(locator.endsWith("_PARTIALLINKTEXT")) {
+			driver.findElement(By.partialLinkText(OR.getProperty(locator))).click();
+		}
+		test.log(LogStatus.INFO, "Clicking on: "+locator);
+	}
+	
+	public void type(String locator,String value) {
+		if (locator.endsWith("_CSS")) {			
+			driver.findElement(By.cssSelector(OR.getProperty(locator))).sendKeys(value);
+		}else if (locator.endsWith("_XPATH")) {
+			driver.findElement(By.xpath(OR.getProperty(locator))).sendKeys(value);
+		}else if (locator.endsWith("_ID")) {
+			driver.findElement(By.id(OR.getProperty(locator))).sendKeys(value);
+		}else if(locator.endsWith("_name")) {
+			driver.findElement(By.name(OR.getProperty(locator))).sendKeys(value);
+		}else if(locator.endsWith("_CLASS")) {
+			driver.findElement(By.className(OR.getProperty(locator))).sendKeys(value);
+		}
+		test.log(LogStatus.INFO, "Typing in " + locator + " entered value is " +value);
 	}
 	
 	public boolean isElementPresent(By by) {
