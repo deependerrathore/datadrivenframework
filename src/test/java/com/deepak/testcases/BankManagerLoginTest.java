@@ -12,7 +12,7 @@ import com.deepak.base.TestBase;
 public class BankManagerLoginTest extends TestBase {
 	
 	@Test
-	public void loginToBankManager() {
+	public void bankManagerLoginTest() {
 		log.debug("Inside Login Test");
 		click("bmlBtn_CSS");
 		assertTrue(isElementPresent(By.cssSelector(OR.getProperty("addCustBtn"))), "Failed to login");

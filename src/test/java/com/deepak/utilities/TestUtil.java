@@ -2,23 +2,46 @@ package com.deepak.utilities;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.DataProvider;
 
 import com.deepak.base.TestBase;
 
-public class TestUtil extends TestBase{
-	
+public class TestUtil extends TestBase {
+
 	public static String screenshotPath;
 	public static String screenshotName;
+
 	public static void captureScreenshot() throws IOException {
-		
-		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+
+		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		Date d = new Date();
-		screenshotName = d.toString().replace(":","_").replace(" ", "_")+ ".jpg";
-		FileUtils.copyFile(srcFile, new File(System.getProperty("user.dir")+"\\target\\surefire-reports\\html\\"+screenshotName));
+		screenshotName = d.toString().replace(":", "_").replace(" ", "_") + ".jpg";
+		FileUtils.copyFile(srcFile,
+				new File(System.getProperty("user.dir") + "\\target\\surefire-reports\\html\\" + screenshotName));
+	}
+
+	@DataProvider(name="dp")
+	public Object[][] getData(Method m) {
+
+		String sheetName = m.getName();
+
+		int rowsCount = excel.getRowCount(sheetName);
+		int colsCount = excel.getColumnCount(sheetName);
+
+		Object[][] data = new Object[rowsCount - 1][colsCount];
+
+		for (int row = 2; row <= rowsCount; row++) {
+			for (int col = 0; col < colsCount; col++) {
+				data[row - 2][col] = excel.getCellData(sheetName, col, row);
+			}
+		}
+
+		return data;
 	}
 }
