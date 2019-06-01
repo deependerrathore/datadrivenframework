@@ -15,11 +15,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import com.deepak.utilities.ExcelReader;
 import com.deepak.utilities.ExtentManager;
+import com.deepak.utilities.TestUtil;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -49,7 +52,7 @@ public class TestBase {
 	@BeforeSuite
 	public void setUp() {
 		
-		PropertyConfigurator.configure("C:\\Dev&Test\\testing\\selenium_framework\\DataDrivenFramework\\src\\test\\java\\log4j.properties");
+		PropertyConfigurator.configure("C:\\Dev&Test\\testing\\selenium_framework\\DataDrivenFramework\\src\\test\\resources\\properties\\log4j.properties");
 
 		
 		if (driver == null) {
@@ -161,6 +164,27 @@ public class TestBase {
 				return false;
 			}
 	}
+	
+	public static void verifyEquals(String expected,String actual) throws IOException {
+		try {
+			Assert.assertEquals(actual, expected);
+		}catch(Throwable t) {
+			
+			TestUtil.captureScreenshot();
+			
+			//ReportNG
+			Reporter.log("<br>" + "Verification failed: " + t.getMessage() + "<br>");
+			Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+"><img src="+TestUtil.screenshotName+" width=200 height=200/><a/>");		
+			Reporter.log("<br>");
+			Reporter.log("<br>");
+
+			//Extent Report
+			test.log(LogStatus.FAIL, "Verification failed with exception " + t.getMessage());		
+			test.log(LogStatus.FAIL,test.addScreenCapture(TestUtil.screenshotName));
+			
+		}
+	}
+	
 	@AfterSuite
 	public void tearDown() {
 		
