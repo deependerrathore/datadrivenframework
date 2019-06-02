@@ -6,6 +6,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
+import org.testng.SkipException;
 
 import com.deepak.base.TestBase;
 import com.deepak.utilities.TestUtil;
@@ -15,6 +16,10 @@ public class CustomListeners extends TestBase implements ITestListener {
 	
 	public void onTestStart(ITestResult result) {
 		test = rep.startTest(result.getName().toUpperCase());
+		//runmodes
+		if (!TestUtil.isTestRunnable(result.getName(), excel)) {
+			throw new SkipException("Skipping the test case " + result.getName().toUpperCase() +"  as run mode of the test case is N");
+		}
 	}
 
 	public void onTestSuccess(ITestResult result) {
@@ -47,8 +52,9 @@ public class CustomListeners extends TestBase implements ITestListener {
 	}
 
 	public void onTestSkipped(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+		test.log(LogStatus.SKIP, result.getName().toUpperCase() +" is skipped as the run mode of the test case is N");		
+		rep.endTest(test);
+		rep.flush();
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {

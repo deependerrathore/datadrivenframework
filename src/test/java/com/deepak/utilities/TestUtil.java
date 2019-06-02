@@ -44,4 +44,29 @@ public class TestUtil extends TestBase {
 
 		return data;
 	}
+	
+	public static boolean isTestRunnable(String testName,ExcelReader excel) {
+
+		String sheetName = "test_suite";
+		int rows = excel.getRowCount(sheetName);
+		
+		for (int row_number = 2; row_number <= rows; row_number++) {
+			String testCase = excel.getCellData(sheetName, "TCID", row_number);
+
+			if (testCase.equalsIgnoreCase(testName)) {
+
+				String runMode = excel.getCellData(sheetName, "Runmode", row_number);
+				
+				
+				if (runMode.equalsIgnoreCase("Y")) {
+					//System.out.println("Test name passed from listener " + testName.toUpperCase() + " test case in TestUtil : " + testCase.toUpperCase() + " Runmode = " + runMode);
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+		}
+		return false;
+	}
 }
