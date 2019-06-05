@@ -1,5 +1,7 @@
 package com.deepak.testcases;
 
+import java.util.HashMap;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
@@ -10,13 +12,13 @@ import com.deepak.utilities.TestUtil;
 public class OpenAccountTest extends TestBase {
 
 	@Test(dataProviderClass = TestUtil.class, dataProvider = "dp")
-	public void openAccountTest(String customer, String currency) throws InterruptedException {
+	public void openAccountTest(HashMap<String, String> data) throws InterruptedException {
 			
 		Thread.sleep(3000);
 		click("openaccount_CSS");
-		select("customer_CSS", customer);
+		select("customer_CSS", data.get("customer"));
 
-		select("currency_CSS", currency);
+		select("currency_CSS", data.get("currency"));
 
 		click("process_CSS");
 		

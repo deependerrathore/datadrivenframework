@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Date;
+import java.util.HashMap;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -34,11 +35,14 @@ public class TestUtil extends TestBase {
 		int rowsCount = excel.getRowCount(sheetName);
 		int colsCount = excel.getColumnCount(sheetName);
 
-		Object[][] data = new Object[rowsCount - 1][colsCount];
+		Object[][] data = new Object[rowsCount - 1][1];
 
+		HashMap<String,String> table = null;
 		for (int row = 2; row <= rowsCount; row++) {
+			table = new HashMap<String, String>();
 			for (int col = 0; col < colsCount; col++) {
-				data[row - 2][col] = excel.getCellData(sheetName, col, row);
+				table.put(excel.getCellData(sheetName, col, 1), excel.getCellData(sheetName, col, row));
+				data[row - 2][0] = table;
 			}
 		}
 
