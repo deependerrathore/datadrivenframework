@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.deepak.config.Configuration;
+
 public class twitLandingPage {
 	
 	WebDriver driver;
@@ -12,16 +14,16 @@ public class twitLandingPage {
 		this.driver = driver;
 	}
 	
-	@FindBy(xpath="//div[@class='DashboardProfileCard-name u-textTruncate']//a[@href='/deepen_rathore']")
+	@FindBy(xpath=Configuration.profile)
 	public WebElement profile;
 	
-	@FindBy(xpath="//li/a/span[text()='Tweets']")
+	@FindBy(xpath=Configuration.tweets)
 	public WebElement tweets;
 	
-	@FindBy(xpath="//li/a/span[text()='Following']")
+	@FindBy(xpath=Configuration.following)
 	public WebElement following;
 	
-	@FindBy(xpath="//li/a/span[text()='Followers']")
+	@FindBy(xpath=Configuration.followers)
 	public WebElement followers;
 	
 	public twitProfilePage gotoProfile() {

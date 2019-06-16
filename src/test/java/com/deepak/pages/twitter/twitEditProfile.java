@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import com.deepak.config.*;
 public class twitEditProfile {
 	WebDriver driver;
 	
@@ -13,17 +13,16 @@ public class twitEditProfile {
 		this.driver = driver;
 	}
 	
-	@FindBy(xpath="//*[@id=\"page-container\"]/div[3]/div/div[1]/div[4]/div[1]/div[2]/div[5]/button/div[2]")
+	@FindBy(xpath = Configuration.changeYourProfileElem)
 	public WebElement changeYourProfileElem;
 	
-	//@FindBy(xpath="//*[@id=\"photo-choose-existing\"]/div/div/input[1]")
-	@FindBy(xpath="//*[@id=\"photo-choose-existing\"]/div/div/label/input")
+	@FindBy(xpath=Configuration.uploadMenuDropDown)
 	public WebElement uploadMenuDropDown;
 	
-	@FindBy(xpath="//*[@id=\"profile_image_upload_dialog-dialog\"]/div[2]/div[3]/button[1]")
+	@FindBy(xpath= Configuration.cancelUploadPhotoBtn)
 	public WebElement cancelUploadPhotoBtn;
 	
-	@FindBy(xpath="//*[@id=\"choose-photo\"]/div/div/ul/li[5]/button")
+	@FindBy(xpath=Configuration.cancelMenuDropDown)
 	public WebElement cancelMenuDropDown;
 	
 	
