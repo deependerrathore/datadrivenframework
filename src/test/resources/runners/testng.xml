@@ -22,4 +22,9 @@
 			<class name="com.deepak.testcases.OpenAccountTest" />
 		</classes>
 	</test>
+	<test name="Twitter login test">
+		<classes>
+			<class name="com.deepak.testcases.TwtLoginTest" />
+		</classes>
+	</test>
 </suite> <!-- Suite -->

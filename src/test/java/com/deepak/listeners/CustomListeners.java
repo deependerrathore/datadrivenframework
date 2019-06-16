@@ -16,6 +16,7 @@ public class CustomListeners extends TestBase implements ITestListener {
 	
 	public void onTestStart(ITestResult result) {
 		test = rep.startTest(result.getName().toUpperCase());
+		System.out.println("Test Name is : " + result.getName());
 		//runmodes
 		if (!TestUtil.isTestRunnable(result.getName(), excel)) {
 			throw new SkipException("Skipping the test case " + result.getName().toUpperCase() +"  as run mode of the test case is N");
