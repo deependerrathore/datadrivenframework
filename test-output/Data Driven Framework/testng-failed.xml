@@ -21,7 +21,7 @@
     <classes>
       <class name="com.deepak.testcases.AddCustomerTest">
         <methods>
-          <include name="addCustomerTest"/>
+          <include name="addCustomerTest" invocation-numbers="0 1"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
@@ -32,7 +32,7 @@
     <classes>
       <class name="com.deepak.testcases.OpenAccountTest">
         <methods>
-          <include name="openAccountTest"/>
+          <include name="openAccountTest" invocation-numbers="0"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>

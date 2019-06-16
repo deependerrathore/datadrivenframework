@@ -4,7 +4,7 @@
            failures="0"
            errors="0"
            skipped="2"
-           time="0.000">
+           time="0.003">
   <properties />
   
             <testcase name="addCustomerTest" time="0.0" classname="com.deepak.testcases.AddCustomerTest">

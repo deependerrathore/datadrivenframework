@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Twitter login test"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="15.768">
+  <properties />
+  
+  
+            <testcase name="twtLoginTest" time="15.768" classname="com.deepak.testcases.TwtLoginTest" />
+      
+</testsuite>
